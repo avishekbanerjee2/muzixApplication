@@ -1,0 +1,24 @@
+.muzix-container{
+    margin: auto;
+    padding-left: 7%;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: 79.5vh;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.muzix-container::-webkit-scrollbar{
+    width: 15px;
+    height: 10px;
+}
+
+.muzix-container::-webkit-scrollbar-thumb{    
+    background-color: #c2c2c2;
+}
+
+/*.movie-container::-webkit-scrollbar-button{    
+    background-color: #e2e2e2;
+}*/

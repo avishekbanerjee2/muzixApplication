@@ -1,0 +1,25 @@
+<h3>Add <strong>{{muzix.name}}</strong> </h3>
+<h3>to your playlist</h3>
+
+<div mat-dialog-content>
+<br><br>
+    <h6>Add Muzix to exisiting Playlist</h6>
+    <mat-form-field>
+      <mat-label>Select Playlist</mat-label>
+      <mat-select [(ngModel)]="selectedPlaylist" id="dd-exisiting-playlist">
+        <mat-option *ngFor="let playlist of playlists" [value]="playlist?.playlistId">
+          {{playlist?.playlistName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <button style="margin-left: 3em;" mat-stroked-button  color="primary" (click)="addToPlaylist()" id="btn-add-to-exisiting-playlist">Add To Playlist</button>
+    
+  <br><br>
+  <h6>Add Muzix to new Playlist</h6>
+  <mat-form-field>
+    <input type="text" placeholder="Enter New Playlist Name" matInput [(ngModel)]="newplaylistName" id="text-new-playlist"/>
+  </mat-form-field>
+  <button  style="margin-left: 3em;" mat-stroked-button  color="primary" (click)="createPlaylist()" id="btn-create-new-playlist">Create NewPlayList</button>
+  
+</div>

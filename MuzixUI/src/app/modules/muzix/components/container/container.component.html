@@ -1,0 +1,30 @@
+<div class="muzix-container" >
+<div *ngIf="playlists.length == 0 " style="display: flex;flex-wrap: wrap;">
+  <muzix-thumbnail *ngFor="let muzix of muzixs" [muzix]="muzix" [useWatchlistApi]="useWatchlistApi" [isPlaylistAdded]="isPlaylistAdded"  (addMuzix)="addToBookmark($event)" (deleteMuzix)="deletMuzixFromBookmark($event)" (updateMovie)="updateWatchlist($event)">
+      <!--<muzix-thumbnail *ngFor="let muzix of muzixs" [muzix]="muzix" >-->
+
+    
+  </muzix-thumbnail>
+  
+  <!--{{muzixs | json}}-->
+</div>
+<div  *ngIf="playlists.length >0 ">
+ <div *ngFor="let playlist of playlists">
+
+    <h3>{{playlist.playlistName}}</h3>
+
+<div style="display: flex;flex-wrap: wrap;">
+
+   
+  <muzix-thumbnail *ngFor="let muzix of playlist.muzixs" [muzix]="muzix" [useWatchlistApi]="useWatchlistApi" [playlistId]="playlist?.playlistId" [isPlaylistAdded]="isPlaylistAdded" (deleteMuzix)="removeFromPlayList($event)">
+    
+
+ 
+  </muzix-thumbnail>
+
+</div>
+  
+
+</div>
+</div>
+</div>

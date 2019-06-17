@@ -1,0 +1,17 @@
+
+
+  <div class="card" style="width: 18rem;margin:1em 1em 1em 1em; ">
+    <div class="card-body">
+      <h5 class="card-title">{{muzix?.name | slice:0:25}}</h5>
+      
+      <p class="card-text">{{muzix?.artist}}</p>
+      
+      <p><a target="_blank" [href]="muzix?.url" class="card-link">Play</a></p>
+      <a *ngIf="!useWatchlistApi && !isPlaylistAdded" (click)="addToBookmark()" class="card-link" id="btn-add-to-bookmark" style="color: blue;cursor: pointer">Add to Bookmark</a>
+      <a *ngIf="!useWatchlistApi && !isPlaylistAdded" (click)="addToPlayList()" class="card-link" id="btn-add-to-playlist" style="color: blue;cursor: pointer">Add to Playlist</a>
+      <a *ngIf="useWatchlistApi && !isPlaylistAdded" (click)="removeFromBookmark()" class="card-link" id="btn-remove-from-bookmark" style="color: blue;cursor: pointer">Remove Bookmark</a>
+      <a *ngIf="!useWatchlistApi && isPlaylistAdded" (click)="removeFromPlayList()" class="card-link" id="btn-remove-from-playlist" style="color: blue;cursor: pointer">Remove From Playlist</a>
+ 
+    </div>
+  </div>
+  

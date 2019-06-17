@@ -1,0 +1,9 @@
+
+<form class="navbar-form navbar-left" >
+  <div class="input-group" style="width:99%">
+    <input type="text" class="form-control" placeholder="Search Track" #box (keyup.enter)="onEnter(box.value)" id="searchMuzix">
+    
+  </div>
+</form>
+
+<muzix-container [muzixs]="muzixs"></muzix-container>
